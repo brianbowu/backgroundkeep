@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="grc-PE-Dw1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="x7u-ud-Rkg">
+            <objects>
+                <navigationController id="grc-PE-Dw1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wo7-W0-36g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5dP-fJ-hnP" kind="relationship" relationship="rootViewController" id="Kft-4p-CMT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5m-8h-hfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="480"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yxh-3Z-e4a">
+            <objects>
+                <viewController id="5dP-fJ-hnP" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y0q-yG-9bV"/>
+                        <viewControllerLayoutGuide type="bottom" id="t9q-4j-HCM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tkL-t5-AoD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by6-sM-0yW">
+                                <rect key="frame" x="20" y="72" width="560" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="开始定位并后台保持"/>
+                                <connections>
+                                    <action selector="startButtonTouched:" destination="5dP-fJ-hnP" eventType="touchUpInside" id="VeI-6v-9Ls"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZN-IZ-7ha">
+                                <rect key="frame" x="20" y="136" width="560" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="停止定位与后台保持"/>
+                                <connections>
+                                    <action selector="stopButtonTouched:" destination="5dP-fJ-hnP" eventType="touchUpInside" id="vQi-IL-2z7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygf-Ez-mEY">
+                                <rect key="frame" x="20" y="211" width="560" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="OnJ-Rl-pXm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="查看Log"/>
+                                <connections>
+                                    <segue destination="XFB-Zg-0HU" kind="show" id="fXt-54-u3d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="ygf-Ez-mEY" secondAttribute="leading" id="7Wp-n3-NQy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sZN-IZ-7ha" secondAttribute="trailing" id="8lV-Ia-8B4"/>
+                            <constraint firstItem="ygf-Ez-mEY" firstAttribute="top" secondItem="sZN-IZ-7ha" secondAttribute="bottom" constant="39" id="E25-xf-vaT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="by6-sM-0yW" secondAttribute="leading" id="ICQ-mC-d9m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="by6-sM-0yW" secondAttribute="trailing" id="Kac-c5-x2O"/>
+                            <constraint firstItem="sZN-IZ-7ha" firstAttribute="top" secondItem="by6-sM-0yW" secondAttribute="bottom" constant="28" id="N8W-TW-J3N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ygf-Ez-mEY" secondAttribute="trailing" id="Nix-fu-mnC"/>
+                            <constraint firstItem="by6-sM-0yW" firstAttribute="top" secondItem="Y0q-yG-9bV" secondAttribute="bottom" constant="8" id="Ujv-wO-VH3"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sZN-IZ-7ha" secondAttribute="leading" id="qRV-Ui-TSk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xnb-4a-HyW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbh-6L-0zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120" y="481"/>
+        </scene>
+        <!--Log View Controller-->
+        <scene sceneID="HRA-J6-jxp">
+            <objects>
+                <viewController id="XFB-Zg-0HU" customClass="LogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="59C-d8-pOh"/>
+                        <viewControllerLayoutGuide type="bottom" id="CMo-x7-gw5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WMd-Ff-Xob">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1KH-eO-YFl">
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="1KH-eO-YFl" secondAttribute="leading" id="2FD-VM-ivw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1KH-eO-YFl" secondAttribute="trailing" id="CgL-Kc-moo"/>
+                            <constraint firstItem="1KH-eO-YFl" firstAttribute="top" secondItem="59C-d8-pOh" secondAttribute="bottom" constant="8" id="cnu-IJ-maH"/>
+                            <constraint firstItem="CMo-x7-gw5" firstAttribute="top" secondItem="1KH-eO-YFl" secondAttribute="bottom" constant="20" id="zgD-Cu-iok"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logDetailView" destination="1KH-eO-YFl" id="eaj-oe-GqE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3eY-aC-7Pi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="480"/>
+        </scene>
+    </scenes>
+</document>
